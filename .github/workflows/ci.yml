@@ -10,7 +10,7 @@ name: CI
 
 defaults:
   run:
-    working-directory: 'geerlingguy.postfix'
+    working-directory: 'penguinperk.postfix'
 
 jobs:
 
@@ -50,7 +50,7 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v2
         with:
-          path: 'geerlingguy.postfix'
+          path: 'penguinperk.postfix'
 
       - name: Set up Python 3.
         uses: actions/setup-python@v2
