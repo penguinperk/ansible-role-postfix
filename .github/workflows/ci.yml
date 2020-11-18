@@ -5,6 +5,7 @@ name: CI
   push:
     branches:
       - master
+      - issue#11
   schedule:
     - cron: "30 4 * * 5"
 
