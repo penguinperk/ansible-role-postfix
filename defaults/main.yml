@@ -6,3 +6,14 @@ postfix_service_enabled: true
 
 postfix_inet_interfaces: localhost
 postfix_inet_protocols: all
+
+postfix_mydomain: domain.local
+postfix_myorigin: $myhostname
+
+postfix_masquerade_domains: $mydomain
+
+postfix_mydestination: $myhostname, localhost.$mydomain, localhost
+
+postfix_relayhost: $mydomain
+
+postfix_smtpd_relay_restrictions: permit_mynetworks permit_sasl_authenticated reject_unauth_destination

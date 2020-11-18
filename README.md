@@ -26,6 +26,22 @@ The state in which the Postfix service should be after this role runs, and wheth
 
 Options for values `inet_interfaces` and `inet_protocols` in the `main.cf` file.
 
+The domain and origin of the mail domain. Change them in the event that your domain of your machine is not the same as your mail domain. 
+	mydomain: $mydomain
+	myorigin: $myhostname
+
+The masquerade domain also needs to be changed to the mail domain 
+	masquerade_domains: $mydomain
+
+The MyDestination also needs to be pointed to your mail relay or mail server.
+The list of domains that are delivered via the $local_transport mail delivery transport. By default this is the Postfix local delivery agent.
+	mydestination: $myhostname, localhost.$mydomain, localhost
+
+The next-hop destination(s) for non-local mail; overrides non-local domains in recipient addresses.
+relayhost: $mydomain
+
+smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated reject_unauth_destination
+
 ## Dependencies
 
 None.

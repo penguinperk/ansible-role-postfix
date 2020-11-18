@@ -15,6 +15,18 @@
       value: "{{ postfix_inet_interfaces }}"
     - name: inet_protocols
       value: "{{ postfix_inet_protocols }}"
+    - name: mydomain
+      value: "{{ postfix_mydomain }}"
+    - name: myorigin
+      value: "{{ postfix_myorigin }}"
+    - name: masquerade_domains
+      value: "{{ postfix_masquerade_domains }}"
+    - name: mydestination
+      value: "{{ postfix_mydestination }}"
+    - name: relayhost
+      value: "{{ postfix_relayhost }}"
+    - name: smtpd_relay_restrictions
+      value: "{{ postfix_smtpd_relay_restrictions }}"
   notify: restart postfix
 
 - name: Ensure postfix is started and enabled at boot.
